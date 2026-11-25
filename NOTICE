@@ -1,0 +1,31 @@
+NOTICE
+
+This website is based on the "eLEARNING - eLearning HTML Template" by
+HTML Codex (https://htmlcodex.com), licensed under the Creative Commons
+Attribution 4.0 International License (CC BY 4.0). See LICENSE.txt and
+READ-ME.txt. The footer credit link ("Designed By HTML Codex") is retained
+on every page, as the license requires.
+
+Modifications made to the original template:
+
+- Content, branding, logo and photographs replaced with those of the
+  Regional Center for Retraining and Advanced Training of Pedagogical Staff
+  at Samarkand State University (pages index.html, about.html, contact.html
+  in Uzbek; the navigation to the other template pages was commented out).
+- Page language set to Uzbek (lang="uz") on the customized pages.
+- Images in img/ recompressed (JPEG quality ~80, metadata stripped, large
+  images downscaled; logo PNGs resized and palette-optimized).
+- Fixed broken local paths (missing favicon on template pages; empty footer,
+  breadcrumb and call-to-action links on the customized pages).
+- Accessibility improvements: aria-labels for icon-only links and buttons,
+  alt text for images, aria-current on the active navigation link,
+  aria-controls/aria-expanded on the navbar toggler, labels for carousel
+  controls, visible keyboard focus outlines (css/style.css), and support for
+  prefers-reduced-motion (css/style.css, js/main.js: no WOW animations, no
+  carousel autoplay, no animated scroll-to-top).
+- Lazy loading (loading="lazy", decoding="async") for below-the-fold images.
+- Replaced the unsupported "sr-only" class with Bootstrap 5 "visually-hidden".
+
+The third-party libraries in lib/ (animate.css, Easing, OwlCarousel2,
+Waypoints, WOW.js) and css/bootstrap.min.css (Bootstrap) retain their own
+licenses.

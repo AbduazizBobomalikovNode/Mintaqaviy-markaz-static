@@ -432,3 +432,57 @@
     padding-right: 0;
     border-right: none;
 }
+
+/*** Accessibility: focus-visible outlines ***/
+:focus-visible {
+    outline: 3px solid var(--dark);
+    outline-offset: 2px;
+}
+
+/* Light variant for dark / colored backgrounds (footer, hero overlay, page header) */
+.footer :focus-visible,
+.bg-dark :focus-visible,
+.bg-primary :focus-visible,
+.header-carousel .owl-carousel-item :focus-visible,
+.header-carousel .owl-nav button:focus-visible,
+.back-to-top:focus-visible {
+    outline-color: #FFFFFF;
+    box-shadow: 0 0 0 5px var(--dark);
+}
+
+/* Owl Carousel nav/dots are <button> elements: keep them keyboard-visible */
+.owl-carousel .owl-nav button:focus-visible,
+.owl-carousel .owl-dots button:focus-visible {
+    outline: 3px solid var(--dark);
+    outline-offset: 2px;
+}
+
+
+/*** Accessibility: reduced motion ***/
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto !important;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-delay: 0s !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        transition-delay: 0s !important;
+        scroll-behavior: auto !important;
+    }
+
+    /* Show content that WOW.js / animate.css would otherwise reveal with motion */
+    .wow,
+    .animated,
+    [class*="animate__"] {
+        animation: none !important;
+        transition: none !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: none !important;
+    }
+}

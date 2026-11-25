@@ -12,8 +12,15 @@
     spinner();
     
     
-    // Initiate the wowjs
-    new WOW().init();
+    // Respect the "reduce motion" accessibility preference
+    var reduceMotion = window.matchMedia &&
+        window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+
+    // Initiate the wowjs (skipped with reduced motion; CSS shows .wow content)
+    if (!reduceMotion) {
+        new WOW().init();
+    }
 
 
     // Sticky Navbar
@@ -63,35 +70,54 @@
         }
     });
     $('.back-to-top').click(function () {
-        $('html, body').animate({scrollTop: 0}, 1500, 'easeInOutExpo');
+        if (reduceMotion) {
+            $('html, body').scrollTop(0);
+        } else {
+            $('html, body').animate({scrollTop: 0}, 1500, 'easeInOutExpo');
+        }
         return false;
     });
 
 
     // Header carousel
     $(".header-carousel").owlCarousel({
-        autoplay: true,
+        autoplay: !reduceMotion,
         smartSpeed: 1500,
         items: 1,
         dots: false,
         loop: true,
         nav : true,
         navText : [
-            '<i class="bi bi-chevron-left"></i>',
-            '<i class="bi bi-chevron-right"></i>'
-        ]
+            '<i class="bi bi-chevron-left" aria-hidden="true"></i>',
+            '<i class="bi bi-chevron-right" aria-hidden="true"></i>'
+        ],
+        onInitialized: function () {
+            // Icon-only carousel buttons need accessible names
+            var lang = ($('html').attr('lang') || 'en').toLowerCase();
+            var labels = lang === 'uz' ? ['Oldingi slayd', 'Keyingi slayd'] : ['Previous slide', 'Next slide'];
+            this.$element.find('.owl-prev').attr('aria-label', labels[0]);
+            this.$element.find('.owl-next').attr('aria-label', labels[1]);
+        }
     });
 
 
     // Testimonials carousel
     $(".testimonial-carousel").owlCarousel({
-        autoplay: true,
+        autoplay: !reduceMotion,
         smartSpeed: 1000,
         center: true,
         margin: 24,
         dots: true,
         loop: true,
         nav : false,
+        onInitialized: function () {
+            // Dots are icon-only buttons: give them accessible names
+            var lang = ($('html').attr('lang') || 'en').toLowerCase();
+            var word = lang === 'uz' ? 'Slayd' : 'Slide';
+            this.$element.find('.owl-dot').each(function (i) {
+                $(this).attr('aria-label', word + ' ' + (i + 1));
+            });
+        },
         responsive: {
             0:{
                 items:1

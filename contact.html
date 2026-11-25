@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uz">
 
 <head>
     <meta charset="utf-8">
@@ -38,7 +38,7 @@
     <div id="spinner"
         class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
         <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
-            <span class="sr-only">Yuklanmoqda...</span>
+            <span class="visually-hidden">Yuklanmoqda...</span>
         </div>
     </div>
     <!-- Spinner End -->
@@ -49,7 +49,8 @@
         <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
             <h2 class="m-0 text-primary"><img src="img/ishxona/logo.png" width="50px" alt="">samdu-hmm.uz</h2>
         </a>
-        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+            aria-controls="navbarCollapse" aria-expanded="false" aria-label="Menyuni ochish/yopish">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -65,7 +66,7 @@
                         <a href="404.html" class="dropdown-item">404 Page</a>
                     </div>
                 </div> -->
-                <a href="contact.html" class="nav-item nav-link active">Bog'lanish</a>
+                <a href="contact.html" class="nav-item nav-link active" aria-current="page">Bog'lanish</a>
             </div>
             <!-- <a href="" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Join Now<i class="fa fa-arrow-right ms-3"></i></a> -->
         </div>
@@ -82,7 +83,7 @@
                     <h1 class="display-3 text-white animated slideInDown">Bog'lanish</h1>
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb justify-content-center">
-                            <li class="breadcrumb-item"><a class="text-white" href="#">Bosh sahifa</a></li>
+                            <li class="breadcrumb-item"><a class="text-white" href="index.html">Bosh sahifa</a></li>
                             <li class="breadcrumb-item text-white active" aria-current="page">Bog'lanish</li>
                         </ol>
                     </nav>
@@ -107,7 +108,7 @@
                     <div class="d-flex align-items-center mb-3">
                         <div class="d-flex align-items-center justify-content-center flex-shrink-0 bg-primary"
                             style="width: 50px; height: 50px;">
-                            <i class="fa fa-map-marker-alt text-white"></i>
+                            <i class="fa fa-map-marker-alt text-white" aria-hidden="true"></i>
                         </div>
                         <div class="ms-3">
                             <h5 class="text-primary">Ofis</h5>
@@ -117,7 +118,7 @@
                     <div class="d-flex align-items-center mb-3">
                         <div class="d-flex align-items-center justify-content-center flex-shrink-0 bg-primary"
                             style="width: 50px; height: 50px;">
-                            <i class="fa fa-phone-alt text-white"></i>
+                            <i class="fa fa-phone-alt text-white" aria-hidden="true"></i>
                         </div>
                         <div class="ms-3">
                             <h5 class="text-primary">Mobil</h5>
@@ -127,7 +128,7 @@
                     <div class="d-flex align-items-center">
                         <div class="d-flex align-items-center justify-content-center flex-shrink-0 bg-primary"
                             style="width: 50px; height: 50px;">
-                            <i class="fa fa-envelope-open text-white"></i>
+                            <i class="fa fa-envelope-open text-white" aria-hidden="true"></i>
                         </div>
                         <div class="ms-3">
                             <h5 class="text-primary">Elektron pochta</h5>
@@ -138,21 +139,21 @@
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
                     
                     <iframe class="position-relative rounded w-100 h-100" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d609.6356971992565!2d66.96448367463732!3d39.64136933461422!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f4d1f5c7f5c1b71%3A0xade4dc59f8421037!2sYurfak%20Makhsus%20Sirtki!5e0!3m2!1sen!2s!4v1730369050854!5m2!1sen!2s" frameborder="0"
-                        style="min-height: 300px; border:0;" allowfullscreen="" aria-hidden="false"
-                        tabindex="0"></iframe>
+                        style="min-height: 300px; border:0;" allowfullscreen="" loading="lazy"
+                        title="Xarita: Samarqand shahar, Muqimiy ko'chasi, 45"></iframe>
                 </div>
                 <div class="col-lg-4 col-md-12 wow fadeInUp" data-wow-delay="0.5s">
                     <form>
                         <div class="row g-3">
                             <div class="col-md-6">
                                 <div class="form-floating">
-                                    <input type="text" class="form-control" id="name" placeholder="Ismingiz">
+                                    <input type="text" class="form-control" id="name" name="name" autocomplete="name" placeholder="Ismingiz">
                                     <label for="name">Ismingiz</label>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-floating">
-                                    <input type="email" class="form-control" id="email" placeholder="Email manzilingiz">
+                                    <input type="email" class="form-control" id="email" name="email" autocomplete="email" placeholder="Email manzilingiz">
                                     <label for="email">Email manzilingiz</label>
                                 </div>
                             </div>
@@ -188,36 +189,36 @@
 
                 <div class="col-lg-4 col-md-8">
                     <h4 class="text-white mb-3">Tez havola</h4>
-                    <a class="btn btn-link" href="">Biz haqimizda</a>
-                    <a class="btn btn-link" href="">Biz bilan bog'laning</a>
-                    <img src="img/ishxona/logo.png" width="120px" alt="">
+                    <a class="btn btn-link" href="about.html">Biz haqimizda</a>
+                    <a class="btn btn-link" href="contact.html">Biz bilan bog'laning</a>
+                    <img src="img/ishxona/logo.png" width="120px" alt="Markaz logotipi" loading="lazy" decoding="async">
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <h4 class="text-white mb-3">Lavhalar</h4>
                     <div class="row g-2 pt-2">
                         <div class="col-4">
                             <img class="img-fluid bg-light p-1"
-                                src="img/footer/CompressJPEG.online_1366x768-image (1).jpg" alt="">
+                                src="img/footer/CompressJPEG.online_1366x768-image (1).jpg" alt="Laboratoriyaga ekskursiya" width="480" height="270" loading="lazy" decoding="async">
                         </div>
                         <div class="col-4">
                             <img class="img-fluid bg-light p-1"
-                                src="img/footer/CompressJPEG.online_1366x768-image (2).jpg" alt="">
+                                src="img/footer/CompressJPEG.online_1366x768-image (2).jpg" alt="Tinglovchilar mashg'ulotda" width="480" height="270" loading="lazy" decoding="async">
                         </div>
                         <div class="col-4">
                             <img class="img-fluid bg-light p-1"
-                                src="img/footer/CompressJPEG.online_1366x768-image (3).jpg" alt="">
+                                src="img/footer/CompressJPEG.online_1366x768-image (3).jpg" alt="Ma'ruza va muhokama jarayoni" width="480" height="270" loading="lazy" decoding="async">
                         </div>
                         <div class="col-4">
                             <img class="img-fluid bg-light p-1"
-                                src="img/footer/CompressJPEG.online_1366x768-image (4).jpg" alt="">
+                                src="img/footer/CompressJPEG.online_1366x768-image (4).jpg" alt="Markaz jamoasi va tinglovchilar jamoaviy suratda" width="480" height="270" loading="lazy" decoding="async">
                         </div>
                         <div class="col-4">
                             <img class="img-fluid bg-light p-1"
-                                src="img/footer/CompressJPEG.online_1366x768-image (5).jpg" alt="">
+                                src="img/footer/CompressJPEG.online_1366x768-image (5).jpg" alt="Universitet ilmiy-amaliy muzey-laboratoriyasi oldida jamoaviy surat" width="480" height="270" loading="lazy" decoding="async">
                         </div>
                         <div class="col-4">
                             <img class="img-fluid bg-light p-1" src="img/footer/CompressJPEG.online_1366x768-image.jpg"
-                                alt="">
+                                alt="Muzeyga ekskursiya" width="480" height="270" loading="lazy" decoding="async">
                         </div>
                     </div>
                 </div>
@@ -227,14 +228,14 @@
 
                 <div class="col-lg-3 col-md-6">
                     <h4 class="text-white mb-3">Kontaktlar</h4>
-                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Samarqand shahar Muqimiy koʻchasi, 45</p>
-                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+988 77 006 09 31</p>
-                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@samdu-hmm.uz</p>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3" aria-hidden="true"></i>Samarqand shahar Muqimiy koʻchasi, 45</p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3" aria-hidden="true"></i>+988 77 006 09 31</p>
+                    <p class="mb-2"><i class="fa fa-envelope me-3" aria-hidden="true"></i>info@samdu-hmm.uz</p>
                     <div class="d-flex pt-2">
-                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
-                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
-                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
+                        <a class="btn btn-outline-light btn-social" href="" aria-label="Twitter sahifasi"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+                        <a class="btn btn-outline-light btn-social" href="" aria-label="Facebook sahifasi"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+                        <a class="btn btn-outline-light btn-social" href="" aria-label="YouTube kanali"><i class="fab fa-youtube" aria-hidden="true"></i></a>
+                        <a class="btn btn-outline-light btn-social" href="" aria-label="LinkedIn sahifasi"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
                     </div>
                 </div>
             </div>
@@ -244,6 +245,8 @@
                 <div class="row">
                     <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
                         &copy; <a class="border-bottom" href="#">samdu-hmm.uz</a>,Barcha huquqlar himoyalangan.
+                        <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
+                        Designed By <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a>
                     </div>
                 </div>
             </div>
@@ -252,7 +255,7 @@
     <!-- Footer End -->
 
     <!-- Back to Top -->
-    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top" aria-label="Yuqoriga qaytish"><i class="bi bi-arrow-up" aria-hidden="true"></i></a>
 
 
     <!-- JavaScript Libraries -->
